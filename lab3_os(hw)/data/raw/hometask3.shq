@@ -1,0 +1,3 @@
+echo "hi my name is eman!"
+pwd
+ls -lh

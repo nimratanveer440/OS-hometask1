@@ -13,7 +13,7 @@ void* find_sum(void* arg) {
 
     printf("Thread for n=%d -> Sum = %d\n", n, sum);
 
-// Return sum as pointer to a local static variable
+// Return sum as pointer 
     static int res[4];
     static int index = 0;
 
@@ -32,7 +32,7 @@ int main() {
         pthread_create(&threads[i], NULL, find_sum, &numbers[i]);
     }
 
-    // Wait for threads and collect results
+    // Wait for threads and results
     for (int i = 0; i < 4; i++) {
         pthread_join(threads[i], (void**)&result);
         total += *result;
